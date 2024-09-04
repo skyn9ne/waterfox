@@ -384,12 +384,12 @@ jobs:
           cat browser/config/version_display.txt >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
       - name: ⏬ Download X64 artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: 'macOS ${{ env.ARCH-X64 }} Build Artifacts ${{ github.run_id }}'
           path: './obj-${{ env.ARCH-X64 }}/dist/'
       - name: ⏬ Download ARM64 artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: 'macOS ${{ env.ARCH-ARM64 }} Build Artifacts ${{ github.run_id }}'
           path: './obj-${{ env.ARCH-ARM64 }}/dist/'

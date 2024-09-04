@@ -48,7 +48,7 @@ jobs:
       - name: "\U0001F4BF Setup rclone"
         run: 'curl https://rclone.org/install.sh | sudo bash'
       - name: ⏬ Download Windows artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: windows-build-output
           path: win/
@@ -68,7 +68,7 @@ jobs:
           rclone copyto win/waterfox-${{ inputs.DISPLAY_VERSION }}.complete.mar
           :s3:cdn/waterfox/staging/${{ inputs.DISPLAY_VERSION }}/update/WINNT_x86_64/waterfox-${{ inputs.DISPLAY_VERSION }}.complete.mar
       - name: ⏬ Download macOS artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: macos-build-output
           path: mac/
@@ -85,7 +85,7 @@ jobs:
           rclone copyto mac/waterfox-${{ inputs.DISPLAY_VERSION }}.complete.mar
           :s3:cdn/waterfox/staging/${{ inputs.DISPLAY_VERSION }}/update/Darwin_x86_64-aarch64/waterfox-${{ inputs.DISPLAY_VERSION }}.complete.mar
       - name: ⏬ Download Linux artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: linux-build-output
           path: lin/
